@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDMSK Technology — AI Development, Software Engineering & Professional Coaching</title>
+    <meta name="description"
+        content="NDMSK Technology delivers cutting-edge AI solutions, web & mobile development, SaaS products, automation systems, and professional coaching programs.">
+    <meta name="keywords"
+        content="AI solutions, web development, mobile app development, SaaS, software engineering, NDMSK Technology, coaching, training">
+    <meta name="author" content="NDMSK Technology">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NDMSK Technology — AI & Software Engineering">
+    <meta property="og:description"
+        content="Building the future through AI development, software engineering and professional coaching.">
+    <meta property="og:type" content="website">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Liquid Glass Buttons -->
+    <link rel="stylesheet" href="assets/css/glass-buttons.css">
+
+    <style>
+        /* 3D hero canvas container */
+        #hero-3d-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-3d-bg canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Reset sections and remove gaps */
+        section {
+            padding: 100px 0;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        #home {
+            padding: 0 !important;
+            margin: 0 !important;
+            min-height: 100vh;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .glitch-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* High-visibility Hero Content Overlay */
+        .hero-overlay {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            padding: 20px;
+            max-width: 900px;
+        }
+
+
+        .glitch-vignette-outer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 1) 100%);
+            z-index: 2;
+        }
+
+        .glitch-vignette-center {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%);
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── PRELOADER ──────────────────────────────────────── -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">NDMSK</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SCROLL PROGRESS ────────────────────────────────── -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ── ANIMATED BACKGROUND ───────────────────────────── -->
+    <div class="animated-grid"></div>
+    <div class="animated-bg">
+    </div>
+
+    <!-- ── BACK TO TOP ────────────────────────────────────── -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+       ══════════════════════════════════════════════════════ -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <div class="logo-combined">
+                <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="coaching.html" class="nav-link">Coaching</a>
+                <a href="why-us.html" class="nav-link">Why Us</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <!-- CTA -->
+            <button class="navbar-cta glass-btn btn-indigo magnetic" onclick="window.location.href='contact.html'">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+            </button>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════
+       HERO SECTION (LAYERED)
+       ══════════════════════════════════════════════════════ -->
+    <section class="hero" id="home">
+        <!-- Letter Glitch Background Layer -->
+        <div id="glitch-bg"></div>
+
+        <!-- Content Layer -->
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1500">
+            <div class="hero-brand-structured">
+                <h1 class="hero-title-main">NDMSK</h1>
+                <div class="hero-title-suffix">
+                    <span class="gradient-text">Technology PVT LTD</span>
+                </div>
+            </div>
+            <p class="hero-tagline-text">
+                Innovative technologies solution at NDMSK <br>
+                <span class="tagline-sub">driven by knowledge, Built in the future</span>
+            </p>
+
+            <div class="hero-btns mt-4">
+                <a href="services.html" class="glass-btn btn-indigo magnetic me-3">
+                    <span>Explore Solutions</span>
+                    <i class="fas fa-rocket ms-2"></i>
+                </a>
+                <a href="contact.html" class="glass-btn btn-outline magnetic">
+                    <span>Get In Touch</span>
+                    <i class="fas fa-envelope ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       ABOUT SECTION
+       ══════════════════════════════════════════════════════ -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">About Us</div>
+                <h2 class="section-title">Transforming Ideas Into<br>
+                    <span class="gradient-text">Digital Reality</span>
+                </h2>
+            </div>
+
+            <div class="about-grid">
+
+                <!-- Content -->
+                <div class="about-content" data-aos="fade-right">
+                    <p>
+                        <strong>NDMSK Technology</strong> is a forward-thinking software company. We
+                        <span class="gradient-text" style="font-weight: 700;">provide cyber security solution </span>
+                        through innovative technology solutions to
+                        businesses. Our passion for excellence drives us to deliver
+                        cutting-edge software that empowers organizations to thrive in the digital age.
+                    </p>
+                    <div class="mt-4">
+                        <a href="about.html" class="btn-outline-glass glass-btn magnetic">
+                            <span>Learn More About Us</span>
+                            <i class="fas fa-chevron-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="about-visual" data-aos="fade-left" data-aos-delay="150">
+                    <div class="about-floating-shapes">
+                        <div class="a-shape shape-glow-1"></div>
+                        <div class="a-shape shape-glow-2"></div>
+                    </div>
+                    <div class="about-visual-card">
+                        <div class="about-stat-grid">
+                            <div class="about-stat">
+                                <div class="about-stat-num gradient-text">2+</div>
+                                <div class="about-stat-lbl">Years Experience</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-num"
+                                    style="background:linear-gradient(135deg,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
+                                    50+</div>
+                                <div class="about-stat-lbl">Projects Completed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New Decorative Element -->
+                    <div class="about-tech-tag" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-microchip me-2"></i>
+                        <span>Tech Explorer</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       SERVICES SECTION
+       ══════════════════════════════════════════════════════ -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">What We Do</div>
+                <h2 class="section-title">Our <span class="gradient-text">Core Services</span></h2>
+                <p class="section-subtitle">End-to-end technology services designed to accelerate your business growth
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Cyber Security -->
+                <div class="service-card sc-red" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot" style="background:#ef4444; box-shadow:0 0 10px #ef4444;"></span>
+                        <span class="status-text">THREAT SHIELD</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Cyber Security</h3>
+                    <p>Protect your digital assets with advanced security audits, encryption, and threat protection.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Web Development -->
+                <div class="service-card sc-blue" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SYSTEM ACTIVE</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Build scalable, responsive web applications using modern frameworks like React and Next.js.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile App Development -->
+                <div class="service-card sc-green" data-aos="flip-up" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">DEPLOYS READY</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Development</h3>
+                    <p>Create native and cross-platform mobile applications for iOS and Android with seamless UX.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Custom Software -->
+                <div class="service-card sc-purple" data-aos="flip-left" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">SECURED OPS</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Custom Software</h3>
+                    <p>Develop bespoke software solutions designed to solve your unique business challenges.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="service-card sc-yellow" data-aos="flip-right" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot" style="background:#f59e0b; box-shadow:0 0 10px #f59e0b;"></span>
+                        <span class="status-text">UX OPTIMIZED</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Design intuitive and visually stunning user interfaces for exceptional user experiences.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Cloud Solutions -->
+                <div class="service-card sc-cyan" data-aos="flip-up" data-aos-duration="1000">
+                    <div class="card-scan-line"></div>
+                    <div class="card-corner corner-tl"></div>
+                    <div class="card-corner corner-br"></div>
+                    <div class="service-status">
+                        <span class="status-dot" style="background:#06b6d4; box-shadow:0 0 10px #06b6d4;"></span>
+                        <span class="status-text">CLOUD SYNCED</span>
+                    </div>
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Migrate and manage your infrastructure on high-performance cloud platforms like AWS.</p>
+                    <button class="service-btn" onclick="window.location.href='contact.html'">
+                        <span>Use Service</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="services.html" class="glass-btn btn-indigo"
+                    style="padding: 15px 40px; font-size: 1.1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+                    <span>Explore All Services</span>
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       NDMSK COACHING SECTION
+       ══════════════════════════════════════════════════════ -->
+    <section id="coaching" class="section-padding">
+        <div class="container">
+            <div class="coaching-inner">
+
+                <div class="coaching-header" data-aos="fade-up">
+                    <div class="section-badge"
+                        style="background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.3);color:#8b5cf6;">
+                        Professional Training
+                    </div>
+                    <h2 class="section-title mt-3">
+                        NDMSK <span class="gradient-text-purple">Coaching</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Industry-led training programs that transform beginners into job-ready professionals.
+                    </p>
+                </div>
+
+                <div class="coaching-grid">
+
+                    <!-- Cyber Security -->
+                    <a href="course-details.html?id=cyber-supremacy" class="course-card" data-aos="zoom-in"
+                        data-aos-delay="0" style="text-decoration: none;">
+                        <div class="course-bg-gradient gradient-blue"></div>
+                        <div class="course-content">
+                            <div class="course-icon icon-blue">🛡️</div>
+                            <h3>Cyber Supremacy</h3>
+                            <p>Master Cyber Security, Ethical Hacking, Networking, and SOC with our 9-month program.</p>
+                        </div>
+                    </a>
+
+                    <!-- AI & ML -->
+                    <a href="course-details.html?id=ai-python" class="course-card" data-aos="zoom-in"
+                        data-aos-delay="200" style="text-decoration: none;">
+                        <div class="course-bg-gradient gradient-purple"></div>
+                        <div class="course-content">
+                            <div class="course-icon icon-purple">🤖</div>
+                            <h3>AI & Python</h3>
+                            <p>Master AI, Computer Vision, and NLP. Build production-grade AI systems from scratch.</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="coaching.html" class="glass-btn btn-indigo magnetic">
+                        <span>View All Courses</span>
+                        <i class="fas fa-graduation-cap ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       WHY CHOOSE US
+       ══════════════════════════════════════════════════════ -->
+    <section id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">Our Advantage</div>
+                <h2 class="section-title">Why Choose <span class="gradient-text-green">NDMSK Technology</span></h2>
+                <p class="section-subtitle">We are not just a service provider — we are your growth partner</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="0">
+                    <span class="why-icon">✅</span>
+                    <h3>Expert Team</h3>
+                    <p>Expert team with 2+ years of industry experience delivering excellence.</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="why-icon">⚡</span>
+                    <h3>Agile Method</h3>
+                    <p>Agile development methodology for faster and reliable delivery.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="why-us.html" class="glass-btn btn-indigo magnetic">
+                    <span>Learn Why We Are The Best</span>
+                    <i class="fas fa-chevron-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       VYUH COMMUNITY SECTION
+       ══════════════════════════════════════════════════════ -->
+    <section id="community" class="section-padding">
+        <div class="container">
+            <div class="community-inner">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7" data-aos="fade-right">
+                        <div class="section-badge badge-yellow">
+                            Developer Ecosystem
+                        </div>
+                        <h2 class="section-title">
+                            Join Vyuh <span class="gradient-text-yellow">Community</span>
+                        </h2>
+                        <p class="section-subtitle">
+                            Be part of a thriving ecosystem where passionate developers connect and build together.
+                        </p>
+                        <div class="mt-4">
+                            <a href="community.html" class="btn-glass-yellow glass-btn magnetic">
+                                <span>Explore Community</span>
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5" data-aos="fade-left">
+                        <div class="vyuh-logo-wrap text-center">
+                            <img src="assets/img/vyuh.png" alt="Vyuh Logo" class="img-fluid" style="max-width:200px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="logo-combined footer-logo">
+                        <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                        <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                    </div>
+                    <p>Building the future through AI innovation, software engineering excellence, and professional
+                        coaching that transforms careers.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/ndmsk-technology" class="social-link"
+                            aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ndmsk_technology" class="social-link" aria-label="Instagram"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">AI Solutions</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">SaaS Development</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coaching Links -->
+                <div class="footer-col">
+                    <h4>Coaching</h4>
+                    <ul>
+                        <li><a href="#coaching">AI Engineering</a></li>
+                        <li><a href="#coaching">Web Development</a></li>
+                        <li><a href="#coaching">Data Science</a></li>
+                        <li><a href="#coaching">Mobile App Dev</a></li>
+                        <li><a href="#coaching">SE Training</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>© <span id="current-year">2026</span> NDMSK Technology. All Rights Reserved.</p>
+                <p class="designer-tag">Designed by vishal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── SCRIPTS ────────────────────────────────────────── -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scrambled Text Effect -->
+    <script src="assets/js/scrambled-text.js"></script>
+
+    <!-- Letter Glitch Script -->
+    <script src="assets/js/letter-glitch.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new LetterGlitch({
+                container: document.getElementById('glitch-bg'),
+                glitchSpeed: 60,
+                centerVignette: false,
+                outerVignette: false,
+                smooth: true,
+                glitchColors: ['#10b981', '#00ff41', '#06d6a0']
+            });
+        });
+    </script>
+</body>
+
+</html>

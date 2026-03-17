@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — NDMSK Technology</title>
+    <meta name="description"
+        content="Get in touch with NDMSK Technology. We're ready to help you with your next software project or coaching enrollment.">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Liquid Glass Buttons -->
+    <link rel="stylesheet" href="assets/css/glass-buttons.css">
+
+    <style>
+        #hero-3d-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-3d-bg canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── PRELOADER ──────────────────────────────────────── -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">NDMSK</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SCROLL PROGRESS ────────────────────────────────── -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ── ANIMATED BACKGROUND ───────────────────────────── -->
+    <div class="animated-grid"></div>
+    <div class="animated-bg">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- ── BACK TO TOP ────────────────────────────────────── -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ── NAVBAR ────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="logo-combined">
+                    <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                    <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                </div>
+            </a>
+
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="coaching.html" class="nav-link">Coaching</a>
+                <a href="why-us.html" class="nav-link">Why Us</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+
+            <button class="navbar-cta glass-btn btn-indigo magnetic" onclick="window.location.href='contact.html'">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+            </button>
+
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── PAGE HEADER ───────────────────────────────────── -->
+    <section class="page-header" style="padding: 160px 0 80px; text-align: center; position: relative; overflow: hidden;">
+        <div id="hero-3d-bg" style="opacity: 0.3;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-badge" data-aos="fade-down">Connect With Us</div>
+            <h1 class="gradient-text mb-4" data-aos="fade-up" style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                Let's Talk About Your <br>Next <span class="gradient-text-blue">Big Idea</span>
+            </h1>
+            <p class="section-subtitle mb-5" data-aos="fade-up" data-aos-delay="100" style="max-width: 750px; margin-left: auto; margin-right: auto; font-size: 1.15rem;">
+                Whether you're looking to scale your engineering team, build a cutting-edge AI solution, or accelerate your career through expert coaching, we are ready to partner with you.
+            </p>
+
+            <!-- Hero Value Grid -->
+            <div class="row g-4 justify-content-center mt-4">
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="hero-mini-card">
+                        <span class="hmc-icon">🚀</span>
+                        <p>Fast Responce</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="hero-mini-card">
+                        <span class="hmc-icon">💡</span>
+                        <p>Expert Advisory</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="hero-mini-card">
+                        <span class="hmc-icon">🛡️</span>
+                        <p>Secure Process</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT SECTION ────────────────────────────────── -->
+    <section id="contact" class="section-padding" style="position: relative; overflow: hidden;">
+        <div class="glow-orb" style="background: var(--blue); width: 400px; height: 400px; position: absolute; top: 10%; right: -200px; border-radius: 50%; filter: blur(100px); opacity: 0.1; z-index: 0;"></div>
+        <div class="glow-orb" style="background: var(--purple); width: 300px; height: 300px; position: absolute; bottom: 10%; left: -150px; border-radius: 50%; filter: blur(100px); opacity: 0.1; z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="row g-5">
+                <!-- Contact Information -->
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info-wrap">
+                        <div class="section-badge badge-blue">Contact Us</div>
+                        <h2 class="section-title mb-4">Let's Build Something <span class="gradient-text">Exceptional</span> Together</h2>
+                        <p class="mb-5" style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8;">
+                            Have a question or a project in mind? We're here to help you navigate the landscape of modern technology. Reach out and let's start a conversation.
+                        </p>
+
+                        <div class="contact-cards-grid">
+                            <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="100">
+                                <div class="cp-icon"><i class="ri-map-pin-2-line"></i></div>
+                                <div class="cp-content">
+                                    <h4>Our Headquarters</h4>
+                                    <p>Bhopal, MP — 462003, India</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="200">
+                                <div class="cp-icon"><i class="ri-mail-send-line"></i></div>
+                                <div class="cp-content">
+                                    <h4>Drop an Email</h4>
+                                    <p>info@ndmsk.com</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="300">
+                                <div class="cp-icon"><i class="ri-phone-line"></i></div>
+                                <div class="cp-content">
+                                    <h4>Give us a Call</h4>
+                                    <p>+91 97701 22064</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-card-premium" data-aos="fade-up" data-aos-delay="400">
+                                <div class="cp-icon"><i class="ri-time-line"></i></div>
+                                <div class="cp-content">
+                                    <h4>Working Hours</h4>
+                                    <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Socials -->
+                        <div class="mt-5">
+                            <h5 style="font-weight: 700; margin-bottom: 20px; font-size: 1rem; color: var(--text-primary);">Join our digital ecosystem</h5>
+                            <div class="social-glass-wrap">
+                                <a href="#" class="social-glass-btn"><i class="ri-linkedin-fill"></i></a>
+                                <a href="#" class="social-glass-btn"><i class="ri-instagram-line"></i></a>
+                                <a href="#" class="social-glass-btn"><i class="ri-discord-line"></i></a>
+                                <a href="#" class="social-glass-btn"><i class="ri-twitter-x-line"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-premium glass-card">
+                        <div class="form-header mb-4">
+                            <h3 style="font-size: 1.75rem; font-weight: 800;">Send a <span class="gradient-text-blue">Message</span></h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">We typically respond within 12 hours.</p>
+                        </div>
+                        
+                        <form id="contact-form" class="premium-form">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-input-group">
+                                        <label>Your Name</label>
+                                        <div class="input-wrapper">
+                                            <i class="ri-user-3-line"></i>
+                                            <input type="text" placeholder="John Doe" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-input-group">
+                                        <label>Email Address</label>
+                                        <div class="input-wrapper">
+                                            <i class="ri-mail-line"></i>
+                                            <input type="email" placeholder="john@example.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-input-group">
+                                        <label>Select Interest</label>
+                                        <div class="input-wrapper">
+                                            <i class="ri-briefcase-line"></i>
+                                            <select required>
+                                                <option value="" disabled selected>Select a Service</option>
+                                                <option>AI Solutions & ML</option>
+                                                <option>Full-Stack Development</option>
+                                                <option>Cyber Security</option>
+                                                <option>Digital Marketing</option>
+                                                <option>NDMSK Coaching</option>
+                                                <option>Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-input-group">
+                                        <label>Message</label>
+                                        <div class="input-wrapper align-items-start pt-3">
+                                            <i class="ri-chat-3-line mt-1"></i>
+                                            <textarea placeholder="Tell us about your requirements..." required style="height: 150px;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4 text-center">
+                                    <button type="submit" class="glass-btn btn-indigo premium-submit magnetic w-100">
+                                        <span>Send Inquiry Now</span>
+                                        <i class="ri-send-plane-2-line ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── QUICK SUPPORT ────────────────────────────────────── -->
+    <section class="section-padding pt-0">
+        <div class="container">
+            <div class="support-cta glass-card p-5 text-center" data-aos="zoom-in">
+                <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 15px;">Need Instant <span class="gradient-text-blue">Support?</span></h3>
+                <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">Chat directly with our team on your favorite platform.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://wa.me/919770122064" target="_blank" class="btn-support whatsapp ripple">
+                        <i class="ri-whatsapp-line"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn-support discord ripple">
+                        <i class="ri-discord-line"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="#" target="_blank" class="btn-support telegram ripple">
+                        <i class="ri-telegram-line"></i>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────────────── -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-combined footer-logo">
+                        <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                        <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                    </div>
+                    <p>Building the future through AI innovation, software engineering excellence, and professional
+                        coaching.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/ndmsk-technology" class="social-link"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ndmsk_technology" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">AI Solutions</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">SaaS Development</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Coaching</h4>
+                    <ul>
+                        <li><a href="coaching.html">AI Engineering</a></li>
+                        <li><a href="coaching.html">Web Development</a></li>
+                        <li><a href="coaching.html">Data Science</a></li>
+                        <li><a href="coaching.html">Mobile App Dev</a></li>
+                        <li><a href="coaching.html">SE Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 NDMSK Technology. All Rights Reserved.</p>
+                <p class="designer-tag">Designed by vishal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── SCRIPTS ────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js';
+            s.onload = function () {
+                var bg = document.createElement('script');
+                bg.src = 'assets/js/three/beams-animation.js';
+                document.body.appendChild(bg);
+            };
+            document.body.appendChild(s);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers — NDMSK Technology</title>
+    <meta name="description"
+        content="Join the elite squad at NDMSK Technology. Explore career opportunities in AI, Software Engineering, and Digital Transformation.">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Liquid Glass Buttons -->
+    <link rel="stylesheet" href="assets/css/glass-buttons.css">
+
+    <style>
+        #hero-3d-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-3d-bg canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .job-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.1), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-icon-wrap {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--blue);
+            margin-bottom: 25px;
+            transition: all 0.4s ease;
+        }
+
+        .job-card:hover .job-icon-wrap {
+            background: var(--blue);
+            color: #fff;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .job-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 12px;
+            border-radius: 50px;
+        }
+
+        .meta-item i {
+            color: var(--blue);
+        }
+
+        .job-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* ─── CULTURE SLIDER ────────────────────────────────── */
+        .culture-slider {
+            width: 100%;
+            overflow: hidden;
+            padding: 80px 0;
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(350px * 14);
+            animation: scroll 40s linear infinite;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-350px * 7));
+            }
+        }
+
+        .slide {
+            width: 350px;
+            height: 450px;
+            padding: 0 15px;
+            flex-shrink: 0;
+        }
+
+        .slide-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .slide:hover img {
+            transform: scale(1.15);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide:hover .slide-overlay {
+            opacity: 1;
+        }
+
+        .apply-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ─── APPLICATION MODAL ────────────────────────────────── */
+        .app-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(5, 5, 16, 0.9);
+            backdrop-filter: blur(15px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .app-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            max-width: 600px;
+            width: 100%;
+            padding: 50px;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .app-modal.active .app-card {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: var(--red);
+            transform: rotate(90deg);
+        }
+
+        .app-form-group {
+            margin-bottom: 25px;
+        }
+
+        .app-form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .app-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px 20px;
+            color: #fff;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .app-input:focus {
+            border-color: var(--blue);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+        }
+
+        .app-form-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .app-form-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .file-upload-wrap {
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-wrap:hover {
+            border-color: var(--blue);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .file-upload-wrap i {
+            display: block;
+            font-size: 2rem;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        #file-name-display {
+            font-size: 0.85rem;
+            color: var(--green);
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── PRELOADER ──────────────────────────────────────── -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">NDMSK</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SCROLL PROGRESS ────────────────────────────────── -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ── ANIMATED BACKGROUND ───────────────────────────── -->
+    <div class="animated-grid"></div>
+    <div class="animated-bg">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- ── BACK TO TOP ────────────────────────────────────── -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ── NAVBAR ────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="logo-combined">
+                    <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                    <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                </div>
+            </a>
+
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="coaching.html" class="nav-link">Coaching</a>
+                <a href="why-us.html" class="nav-link">Why Us</a>
+                <a href="careers.html" class="nav-link active">Careers</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <button class="navbar-cta glass-btn btn-indigo magnetic" onclick="window.location.href='contact.html'">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+            </button>
+
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── PAGE HEADER ───────────────────────────────────── -->
+    <section class="page-header"
+        style="padding: 180px 0 100px; text-align: center; position: relative; overflow: hidden;">
+        <div id="hero-3d-bg" style="opacity: 0.3;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-badge" data-aos="fade-down">Join the Fleet</div>
+            <h1 class="gradient-text mb-4" data-aos="fade-up"
+                style="font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 900; line-height: 1.1;">
+                Build the Future <br>With <span class="gradient-text-blue">Us</span>
+            </h1>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100"
+                style="max-width: 800px; margin: 0 auto;">
+                We are looking for bold thinkers and technical masters who want to push the boundaries of AI, Security,
+                and Scalable Software.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── CAREERS SECTION ────────────────────────────────── -->
+    <section id="careers" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <div class="section-badge">Open Positions</div>
+                <h2 class="section-title">Current <span class="gradient-text">Opportunities</span></h2>
+            </div>
+
+            <div class="job-grid">
+                <!-- AI Engineer -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="job-icon-wrap">
+                        <i class="ri-brain-line"></i>
+                    </div>
+                    <h3>AI & Machine Learning Engineer</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Remote / Bhopal</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Help us build next-gen AI models using Computer Vision and NLP. Experience with
+                        PyTorch or TensorFlow is mandatory.</p>
+                    <button class="glass-btn btn-indigo apply-btn"
+                        onclick="openApplyModal('AI & Machine Learning Engineer')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- Frontend Dev -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="job-icon-wrap">
+                        <i class="ri-reactjs-line"></i>
+                    </div>
+                    <h3>Senior Frontend Developer</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Remote</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Craft stunning, high-performance user interfaces using React, Next.js, and
+                        complex CSS animations.</p>
+                    <button class="glass-btn btn-indigo apply-btn"
+                        onclick="openApplyModal('Senior Frontend Developer')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- Backend Dev -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="job-icon-wrap">
+                        <i class="ri-node-tree"></i>
+                    </div>
+                    <h3>Backend Systems Architect</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Bhopal, India</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Design and scale microservices architectures using Node.js, Docker, and AWS
+                        Cloud infrastructure.</p>
+                    <button class="glass-btn btn-indigo apply-btn"
+                        onclick="openApplyModal('Backend Systems Architect')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- UI/UX Designer -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="job-icon-wrap">
+                        <i class="ri-palette-line"></i>
+                    </div>
+                    <h3>Product Designer (UI/UX)</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Remote</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Create intuitive user journeys and high-fidelity mockups. Mastery of Figma and
+                        design systems is required.</p>
+                    <button class="glass-btn btn-indigo apply-btn" onclick="openApplyModal('Product Designer (UI/UX)')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- Cyber Security -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="job-icon-wrap">
+                        <i class="ri-shield-keyhole-line"></i>
+                    </div>
+                    <h3>Cyber Security Analyst</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Remote / Bhopal</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Audit systems, implement SOC protocols, and perform penetration testing for our
+                        enterprise clients.</p>
+                    <button class="glass-btn btn-indigo apply-btn" onclick="openApplyModal('Cyber Security Analyst')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+
+                <!-- Data Scientist -->
+                <div class="job-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="job-icon-wrap">
+                        <i class="ri-database-2-line"></i>
+                    </div>
+                    <h3>Big Data & Analytics Specialist</h3>
+                    <div class="job-meta">
+                        <span class="meta-item"><i class="ri-map-pin-line"></i> Bhopal, India</span>
+                        <span class="meta-item"><i class="ri-time-line"></i> Full-time</span>
+                    </div>
+                    <p class="job-desc">Analyze complex datasets and generate actionable insights using Python, R, and
+                        Spark.</p>
+                    <button class="glass-btn btn-indigo apply-btn"
+                        onclick="openApplyModal('Big Data & Analytics Specialist')">
+                        <span>Apply Now</span>
+                        <i class="ri-arrow-right-line ms-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Culture Slider Section -->
+            <div class="culture-section mt-5 pt-5">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <div class="section-badge">Life @ NDMSK</div>
+                    <h2 class="section-title">Our <span class="gradient-text">Vibrant Culture</span></h2>
+                </div>
+
+                <div class="culture-slider" data-aos="fade-up">
+                    <div class="slider-track">
+                        <!-- Slides 1-7 -->
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add1.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add2.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add3.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add4.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add5.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add6.jpeg" alt="Culture">
+                                <div class="slide-overlay"></div>
+                            </div>
+                        </div>
+
+                        <!-- Duplicate for infinite effect -->
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add1.jpeg" alt="Culture"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add2.jpeg" alt="Culture"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add3.jpeg" alt="Culture"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add4.jpeg" alt="Culture"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add5.jpeg" alt="Culture"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-inner"><img src="assets/img/why-us/add6.jpeg" alt="Culture"></div>
+                        </div>i want
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perks Section -->
+            <div class="perks-container mt-5 pt-5">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <div class="section-badge">Life at NDMSK</div>
+                    <h2 class="section-title">Why <span class="gradient-text">Join Us?</span></h2>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hero-mini-card" style="text-align: center;">
+                            <span class="hmc-icon">🏙️</span>
+                            <p>Hybrid Culture</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="hero-mini-card" style="text-align: center;">
+                            <span class="hmc-icon">📈</span>
+                            <p>Stock Options</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="hero-mini-card" style="text-align: center;">
+                            <span class="hmc-icon">🏥</span>
+                            <p>Health Credits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── APPLICATION MODAL ────────────────────────────────── -->
+    <div class="app-modal" id="apply-modal">
+        <div class="app-card">
+            <div class="close-modal" onclick="closeApplyModal()">
+                <i class="ri-close-line"></i>
+            </div>
+            <h2 class="app-form-title gradient-text" id="modal-job-title">Apply Now</h2>
+            <p class="app-form-subtitle">Fill in your details below and we'll be in touch.</p>
+
+            <form id="apply-form" onsubmit="handleApplySubmit(event)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="app-form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="fullname" class="app-input" placeholder="John Doe" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="app-form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" class="app-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-form-group">
+                    <label>Portfolio Link (Optional)</label>
+                    <input type="url" name="portfolio" class="app-input" placeholder="https://be.net/yourprofile">
+                </div>
+
+                <div class="app-form-group">
+                    <label>Upload Resume (PDF)</label>
+                    <div class="file-upload-wrap" onclick="document.getElementById('resume-input').click()">
+                        <i class="ri-upload-cloud-2-line"></i>
+                        <span>Click to upload your resume</span>
+                        <input type="file" name="resume" id="resume-input" hidden accept=".pdf" onchange="handleFileSelect(event)">
+                        <p id="file-name-display"></p>
+                    </div>
+                </div>
+
+                <button type="submit" class="glass-btn btn-indigo w-100" style="padding: 15px;">
+                    <span>Submit Application</span>
+                    <i class="ri-arrow-right-line ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ── FOOTER ────────────────────────────────────────── -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-combined footer-logo">
+                        <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                        <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                    </div>
+                    <p>Building the future through AI innovation, software engineering excellence, and professional
+                        coaching.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/ndmsk-technology" class="social-link"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ndmsk_technology" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">AI Solutions</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">SaaS Development</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Coaching</h4>
+                    <ul>
+                        <li><a href="coaching.html">AI Engineering</a></li>
+                        <li><a href="coaching.html">Web Development</a></li>
+                        <li><a href="coaching.html">Data Science</a></li>
+                        <li><a href="coaching.html">Mobile App Dev</a></li>
+                        <li><a href="coaching.html">SE Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 NDMSK Technology. All Rights Reserved.</p>
+                <p class="designer-tag">Designed by vishal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── SCRIPTS ────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function openApplyModal(jobTitle) {
+            const modal = document.getElementById('apply-modal');
+            document.getElementById('modal-job-title').innerText = jobTitle;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApplyModal() {
+            const modal = document.getElementById('apply-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 400);
+        }
+
+        // Close on click outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('apply-modal');
+            if (event.target == modal) {
+                closeApplyModal();
+            }
+        }
+
+        function handleFileSelect(e) {
+            const fileName = e.target.files[0]?.name;
+            const display = document.getElementById('file-name-display');
+            if (fileName) {
+                display.innerText = "Selected: " + fileName;
+                display.style.display = 'block';
+            }
+        }
+
+        async function handleApplySubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span>Processing...</span>';
+            btn.disabled = true;
+
+            const formData = new FormData(e.target);
+            formData.append('jobTitle', document.getElementById('modal-job-title').innerText);
+
+            try {
+                const response = await fetch('/api/apply', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert("Application Sent Successfully! Our team will review your profile and get back to you.");
+                    closeApplyModal();
+                    e.target.reset();
+                    document.getElementById('file-name-display').style.display = 'none';
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                // FALLBACK: If backend is not setup yet, still show success for UI demo
+                alert("Note: Backend is still in development. Application simulation successful!");
+                closeApplyModal();
+                e.target.reset();
+                document.getElementById('file-name-display').style.display = 'none';
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        if (window.innerWidth >= 768) {
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js';
+            s.onload = function () {
+                var bg = document.createElement('script');
+                bg.src = 'assets/js/three/beams-animation.js';
+                document.body.appendChild(bg);
+            };
+            document.body.appendChild(s);
+        }
+    </script>
+</body>
+
+</html>

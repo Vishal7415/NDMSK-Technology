@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin Dashboard - NDMSK Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --dark: #050510;
+            --blue: #00f2ff;
+            --indigo: #6366f1;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --sidebar-width: 260px;
+        }
+
+        body {
+            background: var(--dark);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* ── SIDEBAR ────────────────────────────────────────── */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-right: 1px solid var(--glass-border);
+            padding: 30px 20px;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .logo-area img {
+            height: 30px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 12px 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--blue);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(90deg, rgba(0, 242, 255, 0.1), transparent);
+            border-left: 3px solid var(--blue);
+        }
+
+        /* ── MAIN CONTENT ───────────────────────────────────── */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .dashboard-header {
+            margin-bottom: 40px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--blue), var(--indigo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        /* ── CARDS ──────────────────────────────────────────── */
+        .stat-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--blue);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── TABLE AREA ─────────────────────────────────────── */
+        .data-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .card-header-actions {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .table {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        .table thead th {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--blue);
+            border: none;
+        }
+
+        .table tbody td {
+            padding: 20px 30px;
+            border-color: var(--glass-border);
+            vertical-align: middle;
+        }
+
+        .candidate-info h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .candidate-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        .job-pill {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--indigo);
+            padding: 5px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-right: 5px;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .btn-view:hover { background: var(--blue); color: var(--dark); }
+        .btn-delete:hover { background: #ff4757; }
+
+        /* ── UTILITIES ──────────────────────────────────────── */
+        .live-indicator {
+            width: 10px;
+            height: 10px;
+            background: #2ed573;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        #refresh-timer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="assets/img/log.png" alt="Logo">
+            <span class="gradient-text h5 mb-0">NDMSK Admin</span>
+        </div>
+        <nav>
+            <a href="#" class="nav-link active"><i class="ri-dashboard-fill"></i> Dashboard</a>
+            <a href="#" class="nav-link"><i class="ri-team-line"></i> Job Seekers</a>
+            <a href="careers.html" class="nav-link" target="_blank"><i class="ri-external-link-line"></i> View Site</a>
+            <div style="margin-top: 200px;">
+                <a href="#" class="nav-link text-danger"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard-header d-flex justify-content-between align-items-end">
+            <div>
+                <h1 class="gradient-text mb-2">Command Center</h1>
+                <p class="mb-0 opacity-50"><span class="live-indicator"></span> Real-time intelligence dashboard</p>
+            </div>
+            <div class="text-end">
+                <p id="refresh-timer" class="mb-2">Auto-sync in: 30s</p>
+                <button class="action-btn btn-view" onclick="loadAll()" style="width: auto; padding: 0 20px;">
+                    <i class="ri-refresh-line me-2"></i> Sync Now
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="stat-card" data-aos="fade-up">
+                    <div class="stat-icon"><i class="ri-user-add-line"></i></div>
+                    <div class="stat-value" id="stat-total">0</div>
+                    <div class="stat-label">Total Applications</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon" style="background: rgba(99, 102, 241, 0.1); color: var(--indigo);"><i class="ri-notification-badge-line"></i></div>
+                    <div class="stat-value" id="stat-recent">0</div>
+                    <div class="stat-label">Last 24 Hours</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon" style="background: rgba(46, 213, 115, 0.1); color: #2ed573;"><i class="ri-briefcase-line"></i></div>
+                    <div class="stat-value" id="stat-roles">0</div>
+                    <div class="stat-label">Active Job Roles</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Card -->
+        <div class="data-card">
+            <div class="card-header-actions">
+                <h5 class="mb-0">Recent Applications</h3>
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control bg-dark border-secondary text-white" placeholder="Search candidate..." style="width: 250px;" id="searchInput">
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table align-middle" id="mainTable">
+                    <thead>
+                        <tr>
+                            <th>Candidate Details</th>
+                            <th>Target Role</th>
+                            <th>Portfolio</th>
+                            <th>Submission Date</th>
+                            <th>Management</th>
+                        </tr>
+                    </thead>
+                    <tbody id="app-body">
+                        <!-- Content loaded via JS -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="loader" class="text-center py-5">
+                <div class="spinner-border text-info" role="status"></div>
+                <p class="mt-3 opacity-50">Fetching candidates...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let countdown = 30;
+        const timerElement = document.getElementById('refresh-timer');
+
+        async function fetchStats() {
+            try {
+                const res = await fetch('/api/stats');
+                const data = await res.json();
+                
+                if (res.ok) {
+                    document.getElementById('stat-total').innerText = data.total || 0;
+                    document.getElementById('stat-recent').innerText = data.recent || 0;
+                    document.getElementById('stat-roles').innerText = (data.byJob && data.byJob.length) || 0;
+                } else {
+                    console.error('Stats error:', data);
+                }
+            } catch (e) { 
+                console.error('Stats connection error:', e);
+            }
+        }
+
+        async function fetchApplications() {
+            const body = document.getElementById('app-body');
+            const loader = document.getElementById('loader');
+            
+            try {
+                const res = await fetch('/api/applications');
+                const apps = await res.json();
+                
+                loader.classList.add('d-none');
+                body.innerHTML = '';
+
+                if (!res.ok) {
+                    body.innerHTML = `<tr><td colspan="5" class="text-center py-5 text-danger">
+                        <i class="ri-error-warning-line" style="font-size: 2rem"></i>
+                        <p class="mt-2">Database Error: ${apps.message || 'Could not connect'}</p>
+                        <small class="opacity-50">Please check your MySQL connection and environment variables.</small>
+                    </td></tr>`;
+                    return;
+                }
+
+                if (!Array.isArray(apps) || apps.length === 0) {
+                    body.innerHTML = '<tr><td colspan="5" class="text-center py-5 opacity-50">No applications found in database.</td></tr>';
+                    return;
+                }
+
+                apps.forEach(app => {
+                    const date = new Date(app.created_at).toLocaleDateString();
+                    body.innerHTML += `
+                        <tr>
+                            <td>
+                                <div class="candidate-info">
+                                    <h6>${app.full_name || 'N/A'}</h6>
+                                    <p>${app.email || 'N/A'}</p>
+                                </div>
+                            </td>
+                            <td><span class="job-pill">${app.job_title || 'General'}</span></td>
+                            <td>
+                                ${app.portfolio ? `<a href="${app.portfolio}" target="_blank" class="action-btn btn-view"><i class="ri-link"></i></a>` : '<span class="opacity-25">-</span>'}
+                            </td>
+                            <td><span class="opacity-75">${date}</span></td>
+                            <td>
+                                <a href="/api/resume?id=${app.id}" class="action-btn btn-view" title="Download CV">
+                                    <i class="ri-file-pdf-line"></i>
+                                </a>
+                                <button onclick="deleteApp(${app.id})" class="action-btn btn-delete" title="Delete Database Entry">
+                                    <i class="ri-delete-bin-line"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } catch (e) {
+                loader.innerHTML = `<p class="text-danger">Network Connection Error. Is the backend running?</p>`;
+                console.error('Fetch error:', e);
+            }
+        }
+
+        async function deleteApp(id) {
+            if (!confirm('Are you sure you want to delete this applicant data forever?')) return;
+            try {
+                const res = await fetch(`/api/applications?id=${id}`, { method: 'DELETE' });
+                if (res.ok) {
+                    alert('Data purged successfully.');
+                    loadAll();
+                }
+            } catch (e) { alert('Delete failed.'); }
+        }
+
+        function loadAll() {
+            fetchStats();
+            fetchApplications();
+            countdown = 30;
+        }
+
+        // Real-time polling imitation
+        setInterval(() => {
+            countdown--;
+            if (countdown <= 0) {
+                loadAll();
+            }
+            timerElement.innerText = `Auto-sync in: ${countdown}s`;
+        }, 1000);
+
+        // Search Filter
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll('#app-body tr');
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                row.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
+
+        // Initial Load
+        loadAll();
+    </script>
+</body>
+
+</html>

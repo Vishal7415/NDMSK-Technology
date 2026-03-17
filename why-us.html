@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us — NDMSK Technology</title>
+    <meta name="description"
+        content="Discover why NDMSK Technology is the preferred choice for AI solutions and professional coaching.">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Liquid Glass Buttons -->
+    <link rel="stylesheet" href="assets/css/glass-buttons.css">
+
+    <style>
+        #hero-3d-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-3d-bg canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── PRELOADER ──────────────────────────────────────── -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">NDMSK</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SCROLL PROGRESS ────────────────────────────────── -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ── ANIMATED BACKGROUND ───────────────────────────── -->
+    <div class="animated-grid"></div>
+    <div class="animated-bg">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- ── BACK TO TOP ────────────────────────────────────── -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ── NAVBAR ────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="logo-combined">
+                    <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                    <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                </div>
+            </a>
+
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="coaching.html" class="nav-link">Coaching</a>
+                <a href="why-us.html" class="nav-link active">Why Us</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <button class="navbar-cta glass-btn btn-indigo magnetic" onclick="window.location.href='contact.html'">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+            </button>
+
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── PAGE HEADER ───────────────────────────────────── -->
+    <section class="page-header"
+        style="padding: 140px 0 60px; text-align: center; position: relative; overflow: hidden;">
+        <div id="hero-3d-bg" style="opacity: 0.4;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-badge" data-aos="fade-down">Our Advantage</div>
+            <h1 class="gradient-text" data-aos="fade-up" style="font-size: 3.5rem; font-weight: 800; margin-top: 20px;">
+                Why Choose Us</h1>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We are not just a service provider — we
+                are your growth partner.</p>
+        </div>
+    </section>
+
+    <!-- ── WHY US SECTION (EXTRACTED) ────────────────────── -->
+    <section id="why-us" class="section-padding">
+        <div class="container">
+            <div class="why-grid">
+                <!-- Expert Team -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="assets/img/why-us/talent.png" alt="Top-Tier Talent" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot green-glow"></span>
+                        <span class="status-text">ELITE SQUAD</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-users-gear"></i>
+                    </div>
+                    <h3>Top-Tier Talent</h3>
+                    <p>Our engineers aren't just coders; they are system architects with deep expertise in AI, Cloud,
+                        and Scalable Systems.</p>
+                </div>
+
+                <!-- Agile Method -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/img/why-us/agility.png" alt="Technical Agility" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot blue-glow"></span>
+                        <span class="status-text">SPRINT MODE</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-bolt-lightning"></i>
+                    </div>
+                    <h3>Technical Agility</h3>
+                    <p>We deploy using modern CI/CD pipelines and Agile workflows, ensuring rapid delivery without
+                        compromising on code stability.</p>
+                </div>
+
+                <!-- 24/7 Support -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/img/why-us/partnership.png" alt="Direct Partnership" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot cyan-glow"></span>
+                        <span class="status-text">ALWAYS UPTIME</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Direct Partnership</h3>
+                    <p>No layers of management. You get direct access to the technical team building your vision,
+                        24/7/365.</p>
+                </div>
+
+                <!-- Strategic Pricing -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/img/why-us/strategic.png" alt="Strategic Value" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot yellow-glow"></span>
+                        <span class="status-text">HIGH ROI</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Strategic Value</h3>
+                    <p>We provide premium enterprise-grade solutions at competitive pricing, maximizing your return on
+                        technology investment.</p>
+                </div>
+
+                <!-- Security First -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="assets/img/why-us/security.png" alt="Security Focused" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot red-glow"></span>
+                        <span class="status-text">SECURED DNA</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Security Focused</h3>
+                    <p>Every line of code we write follows the highest security standards, from data encryption to
+                        penetration testing.</p>
+                </div>
+
+                <!-- Future Ready -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="assets/img/why-us/ai.png" alt="AI-First Approach" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot purple-glow"></span>
+                        <span class="status-text">FUTURE-PROOFS</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>AI-First Approach</h3>
+                    <p>We build with the future in mind, integrating intelligent automation and AI into every digital
+                        architecture.</p>
+                </div>
+
+                <!-- Scalable Systems -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="assets/img/why-us/scalable.png" alt="Scalable Architecture" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot indigo-glow"></span>
+                        <span class="status-text">INFINITE SCALE</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Scalable Architecture</h3>
+                    <p>Systems designed to grow seamlessly with your user base, ensuring zero downtime during rapid
+                        expansion peaks.</p>
+                </div>
+
+                <!-- Data Integrity -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="700">
+                    <img src="assets/img/why-us/data.png" alt="Data Integrity" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot orange-glow"></span>
+                        <span class="status-text">PURE DATA</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Integrity</h3>
+                    <p>Strict protocols for data accuracy and privacy, ensuring your most valuable assets remain
+                        uncorrupted
+                        and secure.</p>
+                </div>
+
+                <!-- Global Delivery -->
+                <div class="why-card cyber-card" data-aos="fade-up" data-aos-delay="800">
+                    <img src="assets/img/why-us/global.png" alt="Global Delivery" class="why-card-img">
+                    <div class="card-scanner"></div>
+                    <div class="why-card-status">
+                        <span class="status-dot pink-glow"></span>
+                        <span class="status-text">WORLD READY</span>
+                    </div>
+                    <div class="why-icon-wrap">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Delivery</h3>
+                    <p>Optimized for international performance with multi-region deployments and localized user
+                        experience
+                        standards.</p>
+                </div>
+            </div>
+
+            <!-- Methodology Section -->
+            <div class="methodology-container mt-5 pt-5">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <div class="section-badge">The Vyuh Approach</div>
+                    <h2 class="section-title">Our <span class="gradient-text">Core Methodology</span></h2>
+                    <p class="section-subtitle">A systematic, multi-layered process designed for precision and scale.
+                    </p>
+                </div>
+
+                <div class="method-steps">
+                    <div class="method-step" data-aos="fade-right">
+                        <div class="method-num">01</div>
+                        <div class="method-content">
+                            <h4>Discovery & Analysis</h4>
+                            <p>We deep-dive into your business ecosystem to identify technical gaps and growth
+                                opportunities.</p>
+                        </div>
+                    </div>
+                    <div class="method-step" data-aos="fade-left">
+                        <div class="method-num">02</div>
+                        <div class="method-content">
+                            <h4>Architecture Design</h4>
+                            <p>Creating high-performance system blueprints optimized for security and future
+                                scalability.</p>
+                        </div>
+                    </div>
+                    <div class="method-step" data-aos="fade-right">
+                        <div class="method-num">03</div>
+                        <div class="method-content">
+                            <h4>Agile Development</h4>
+                            <p>Transparent, iterative coding cycles with weekly updates and rigorous QA testing.</p>
+                        </div>
+                    </div>
+                    <div class="method-step" data-aos="fade-left">
+                        <div class="method-num">04</div>
+                        <div class="method-content">
+                            <h4>Global Deployment</h4>
+                            <p>Launching your solution on robust cloud infrastructure with 24/7 post-launch monitoring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Section -->
+            <div class="tech-stack-container mt-5 pt-5">
+                <div class="section-header text-center mb-5" data-aos="fade-up">
+                    <div class="section-badge">Technical DNA</div>
+                    <h2 class="section-title">Our <span class="gradient-text">Mastered Tech Stack</span></h2>
+                </div>
+
+                <div class="tech-grid" data-aos="fade-up">
+                    <div class="tech-item"><i class="fab fa-react"></i><span>React/Next.js</span></div>
+                    <div class="tech-item"><i class="fab fa-python"></i><span>AI/ML Python</span></div>
+                    <div class="tech-item"><i class="fab fa-aws"></i><span>AWS Cloud</span></div>
+                    <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                    <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                    <div class="tech-item"><i class="fab fa-envira"></i><span>MongoDB</span></div>
+                    <div class="tech-item"><i class="fab fa-github"></i><span>CI/CD</span></div>
+                    <div class="tech-item"><i class="fas fa-brain"></i><span>TensorFlow</span></div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="why-stats-bar mt-5 pt-5" data-aos="fade-up">
+                <div class="why-stat-box glass-card">
+                    <div class="why-stat-num gradient-text">99%</div>
+                    <div class="why-stat-lbl">Deployment Accuracy</div>
+                </div>
+                <div class="why-stat-box glass-card">
+                    <div class="why-stat-num gradient-text">12H</div>
+                    <div class="why-stat-lbl">Technical Response</div>
+                </div>
+                <div class="why-stat-box glass-card">
+                    <div class="why-stat-num gradient-text">100%</div>
+                    <div class="why-stat-lbl">Uptime Commitment</div>
+                </div>
+                <div class="why-stat-box glass-card">
+                    <div class="why-stat-num gradient-text">250+</div>
+                    <div class="why-stat-lbl">Global Nodes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────────────── -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-combined footer-logo">
+                        <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                        <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                    </div>
+                    <p>Building the future through AI innovation, software engineering excellence, and professional
+                        coaching.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/ndmsk-technology" class="social-link"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ndmsk_technology" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">AI Solutions</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">SaaS Development</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Coaching</h4>
+                    <ul>
+                        <li><a href="coaching.html">AI Engineering</a></li>
+                        <li><a href="coaching.html">Web Development</a></li>
+                        <li><a href="coaching.html">Data Science</a></li>
+                        <li><a href="coaching.html">Mobile App Dev</a></li>
+                        <li><a href="coaching.html">SE Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 NDMSK Technology. All Rights Reserved.</p>
+                <p class="designer-tag">Designed by vishal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── SCRIPTS ────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js';
+            s.onload = function () {
+                var bg = document.createElement('script');
+                bg.src = 'assets/js/three/beams-animation.js';
+                document.body.appendChild(bg);
+            };
+            document.body.appendChild(s);
+        }
+    </script>
+</body>
+
+</html>

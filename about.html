@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — NDMSK Technology</title>
+    <meta name="description"
+        content="Learn about NDMSK Technology — our mission, our values, and how we transform ideas into digital reality.">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Liquid Glass Buttons -->
+    <link rel="stylesheet" href="assets/css/glass-buttons.css">
+
+    <style>
+        #hero-3d-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #hero-3d-bg canvas {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── PRELOADER ──────────────────────────────────────── -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">NDMSK</div>
+            <div class="preloader-text">Loading Excellence...</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── SCROLL PROGRESS ────────────────────────────────── -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- ── ANIMATED BACKGROUND ───────────────────────────── -->
+    <div class="animated-grid"></div>
+    <div class="animated-bg">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- ── BACK TO TOP ────────────────────────────────────── -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ── NAVBAR ────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <div class="logo-combined">
+                    <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                    <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                </div>
+            </a>
+
+            <div class="navbar-menu" id="navbar-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="coaching.html" class="nav-link">Coaching</a>
+                <a href="why-us.html" class="nav-link">Why Us</a>
+                <a href="careers.html" class="nav-link">Careers</a>
+                <a href="community.html" class="nav-link">Community</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <button class="navbar-cta glass-btn btn-indigo magnetic" onclick="window.location.href='contact.html'">
+                <span>Get In Touch</span>
+                <i class="fas fa-arrow-right btn-icon"></i>
+            </button>
+
+            <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── PAGE HEADER ───────────────────────────────────── -->
+    <section class="page-header"
+        style="padding: 140px 0 60px; text-align: center; position: relative; overflow: hidden;">
+        <div id="hero-3d-bg" style="opacity: 0.4;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-badge" data-aos="fade-down">Company Profile</div>
+            <h1 class="gradient-text" data-aos="fade-up" style="font-size: 3.5rem; font-weight: 800; margin-top: 20px;">
+                About Our Expertise</h1>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Learn how we are shaping the future of
+                technology in Central India.</p>
+        </div>
+    </section>
+
+    <!-- ── ABOUT SECTION (EXTRACTED) ────────────────────── -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Content -->
+                <div class="about-content" data-aos="fade-right">
+                    <div class="section-badge" style="display:inline-block;margin-bottom:20px;">Our Vision</div>
+                    <h2>
+                        Transforming Ideas Into<br>
+                        <span class="gradient-text">Digital Reality</span>
+                    </h2>
+                    <p>
+                        NDMSK Technology is a forward-thinking software company dedicated to transforming businesses
+                        through innovative technology solutions. Our passion for excellence drives us to deliver
+                        cutting-edge software that empowers organizations to thrive in the digital age.
+                    </p>
+                    <p>
+                        Whether you need custom software development, mobile apps, web solutions, or digital
+                        transformation
+                        consulting - we're here to help bring your ideas to life. We believe in creating technology that
+                        makes a real difference in people's lives and business operations.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-brain"></i> AI-First Approach
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-code-branch"></i> Agile Development
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-shield-alt"></i> Enterprise Security
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-headset"></i> 24/7 Support
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual -->
+                <div class="about-visual" data-aos="fade-left" data-aos-delay="150">
+                    <div class="about-visual-card">
+                        <div class="about-stat-grid">
+                            <div class="about-stat">
+                                <div class="about-stat-num gradient-text">2+</div>
+                                <div class="about-stat-lbl">Years Experience</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-num"
+                                    style="background:linear-gradient(135deg,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
+                                    50+</div>
+                                <div class="about-stat-lbl">Projects Completed</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-num"
+                                    style="background:linear-gradient(135deg,#06b6d4,#10b981);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
+                                    50+</div>
+                                <div class="about-stat-lbl">Happy Clients</div>
+                            </div>
+                            <div class="about-stat">
+                                <div class="about-stat-num"
+                                    style="background:linear-gradient(135deg,#f59e0b,#ef4444);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">
+                                    24/7</div>
+                                <div class="about-stat-lbl">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ── TEAM SECTION ────────────────────────────────────────── -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <div class="section-badge">Our Experts</div>
+                <h2 class="section-title">Meet the <span class="gradient-text">Core Team</span></h2>
+                <p class="section-subtitle">The visionary minds behind NDMSK's technical excellence and innovation.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- CEO -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image-wrap">
+                        <img src="assets/img/team/kapil.png" alt="Kapil Kumar Sahu" class="team-image">
+                    </div>
+                    <h3>Kapil Kumar Sahu</h3>
+                    <span class="team-role">CEO </span>
+                    <p class="team-bio">The visionary founder leading NDMSK with a strategic focus on AI innovation and
+                        sustainable digital growth.</p>
+                    <div class="team-social">
+                        <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="team-social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- MD -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image-wrap">
+                        <img src="assets/img/team/neeraj.png" alt="Neeraj Kumar Sharma" class="team-image">
+                    </div>
+                    <h3>Neeraj Sharma</h3>
+                    <span class="team-role">Managing Director</span>
+                    <p class="team-bio">Expert in operational excellence and business strategy, ensuring NDMSK delivers
+                        world-class solutions to every client.</p>
+                    <div class="team-social">
+                        <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="team-social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- COO -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-image-wrap">
+                        <img src="assets/img/team/ritu.jpeg" alt="Ritu Vishwakarma" class="team-image">
+                    </div>
+                    <h3>Ritu Vishwakarma</h3>
+                    <span class="team-role">operational Director</span>
+                    <p class="team-bio">A dedicated leader optimizing organizational processes and fostering a culture
+                        of technical excellence and creativity.</p>
+                    <div class="team-social">
+                        <a href="#" class="team-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="team-social-link"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ────────────────────────────────────────── -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-combined footer-logo">
+                        <img src="assets/img/log.png" alt="NDMSK" class="icon-img">
+                        <img src="assets/img/logo.png" alt="NDMSK Technology" class="text-img">
+                    </div>
+                    <p>Building the future through AI innovation, software engineering excellence, and professional
+                        coaching.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/ndmsk-technology" class="social-link"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ndmsk_technology" class="social-link" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">AI Solutions</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">SaaS Development</a></li>
+                        <li><a href="services.html">Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Coaching</h4>
+                    <ul>
+                        <li><a href="coaching.html">AI Engineering</a></li>
+                        <li><a href="coaching.html">Web Development</a></li>
+                        <li><a href="coaching.html">Data Science</a></li>
+                        <li><a href="coaching.html">Mobile App Dev</a></li>
+                        <li><a href="coaching.html">SE Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 NDMSK Technology. All Rights Reserved.</p>
+                <p class="designer-tag">Designed by vishal</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ── SCRIPTS ────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            var s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js';
+            s.onload = function () {
+                var bg = document.createElement('script');
+                bg.src = 'assets/js/three/beams-animation.js';
+                document.body.appendChild(bg);
+            };
+            document.body.appendChild(s);
+        }
+    </script>
+</body>
+
+</html>
