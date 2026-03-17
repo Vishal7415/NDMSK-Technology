@@ -1,7 +1,6 @@
 // NDMSK Technology Server
 const express = require('express');
-const sqlite3 = require('sqlite3');
-const { open } = require('sqlite');
+const { Pool } = require('pg');
 const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
@@ -20,47 +19,46 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Database connection
-let db;
-async function connectDB() {
-    try {
-        db = await open({
-            filename: './database.sqlite',
-            driver: sqlite3.Database
-        });
+const isProduction = process.env.NODE_ENV === 'production';
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: isProduction ? { rejectUnauthorized: false } : false
+});
 
-        // Initialize table if it doesn't exist
-        await db.exec(`
+async function initDB() {
+    try {
+        await pool.query(`
             CREATE TABLE IF NOT EXISTS job_applications (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id SERIAL PRIMARY KEY,
                 full_name TEXT,
                 email TEXT,
                 portfolio TEXT,
                 job_title TEXT,
-                resume BLOB,
+                resume BYTEA,
                 resume_name TEXT,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         `);
-        console.log('SQLite Database connected and table verified');
+        console.log('PostgreSQL Database connected and table verified');
     } catch (err) {
         console.error('Database connection failed:', err.message);
     }
 }
-connectDB();
+initDB();
 
 // API Routes
 
 // 1. Get stats
 app.get('/api/stats', async (req, res) => {
     try {
-        const total = await db.get('SELECT COUNT(*) as count FROM job_applications');
-        const recent = await db.get("SELECT COUNT(*) as count FROM job_applications WHERE created_at >= datetime('now', '-1 day')");
-        const byJob = await db.all('SELECT job_title, COUNT(*) as count FROM job_applications GROUP BY job_title');
+        const totalResult = await pool.query('SELECT COUNT(*) as count FROM job_applications');
+        const recentResult = await pool.query("SELECT COUNT(*) as count FROM job_applications WHERE created_at >= NOW() - INTERVAL '1 day'");
+        const byJobResult = await pool.query('SELECT job_title, COUNT(*) as count FROM job_applications GROUP BY job_title');
         
         res.json({
-            total: total.count,
-            recent: recent.count,
-            byJob: byJob
+            total: parseInt(totalResult.rows[0].count),
+            recent: parseInt(recentResult.rows[0].count),
+            byJob: byJobResult.rows
         });
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -70,7 +68,7 @@ app.get('/api/stats', async (req, res) => {
 // 2. Get applications
 app.get('/api/applications', async (req, res) => {
     try {
-        const rows = await db.all('SELECT * FROM job_applications ORDER BY created_at DESC');
+        const { rows } = await pool.query('SELECT * FROM job_applications ORDER BY created_at DESC');
         res.json(rows);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -84,12 +82,12 @@ app.post('/api/apply', upload.single('resume'), async (req, res) => {
         const resume = req.file ? req.file.buffer : null;
         const resumeName = req.file ? req.file.originalname : null;
 
-        const result = await db.run(
-            'INSERT INTO job_applications (full_name, email, portfolio, job_title, resume, resume_name) VALUES (?, ?, ?, ?, ?, ?)',
+        const result = await pool.query(
+            'INSERT INTO job_applications (full_name, email, portfolio, job_title, resume, resume_name) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id',
             [fullname, email, portfolio, jobTitle, resume, resumeName]
         );
 
-        res.status(201).json({ message: 'Application submitted successfully', id: result.lastID });
+        res.status(201).json({ message: 'Application submitted successfully', id: result.rows[0].id });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: err.message });
@@ -100,7 +98,8 @@ app.post('/api/apply', upload.single('resume'), async (req, res) => {
 app.get('/api/resume', async (req, res) => {
     try {
         const { id } = req.query;
-        const row = await db.get('SELECT resume, resume_name FROM job_applications WHERE id = ?', [id]);
+        const { rows } = await pool.query('SELECT resume, resume_name FROM job_applications WHERE id = $1', [id]);
+        const row = rows[0];
         
         if (!row || !row.resume) {
             return res.status(404).json({ message: 'Resume not found' });
@@ -118,7 +117,7 @@ app.get('/api/resume', async (req, res) => {
 app.delete('/api/applications', async (req, res) => {
     try {
         const { id } = req.query;
-        await db.run('DELETE FROM job_applications WHERE id = ?', [id]);
+        await pool.query('DELETE FROM job_applications WHERE id = $1', [id]);
         res.json({ message: 'Application deleted successfully' });
     } catch (err) {
         res.status(500).json({ message: err.message });

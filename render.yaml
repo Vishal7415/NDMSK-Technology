@@ -1,3 +1,9 @@
+databases:
+  - name: ndmsk-db
+    databaseName: ndmsk
+    user: ndmsk_user
+    plan: free
+
 services:
   - type: web
     name: ndmsk-technology
@@ -10,3 +16,9 @@ services:
         value: 20
       - key: PORT
         value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ndmsk-db
+          property: connectionString
+      - key: NODE_ENV
+        value: production
